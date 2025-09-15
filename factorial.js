@@ -81,4 +81,28 @@ function sum(n) {
 // * Time Complexity: O(n^2)
 // * Space Complexity: O(1)
 
-console.log(sum(10));
+// console.log(sum(10));
+
+//! 04 Problem: Factorial Digit Count
+//*Description: Given a number n, calculate n! and return the number of digits in the factorial.
+
+//? Example:
+
+//? Input: 5 → 5! = 120 → number of digits = 3
+
+//? Input: 10 → 10! = 3628800 → number of digits = 7
+
+function count(n) {
+  let factorial = 1;
+
+  for (let i = n; i > 0; i--) {
+    factorial *= i;
+  }
+
+  return factorial.toString().length;
+}
+
+// * Time Complexity: O(n)
+// * Space Complexity: O(1)
+
+console.log(count(10));

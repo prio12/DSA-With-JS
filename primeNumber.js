@@ -44,3 +44,40 @@ function isPrime2(n) {
 
 // * Time Complexity: O(√n)
 // * Space Complexity: O(1)
+
+//! 02 Problem: Print All Prime Numbers in a Range
+//*👉 Given two numbers a and b, print all prime numbers between a and b (inclusive).
+
+//*Example:
+//* Input: a = 10, b = 20
+//* Output: [11, 13, 17, 19]
+
+function findPrimeNumbers(a, b) {
+  const numbers = [];
+  const primeNumbers = [];
+  for (let i = a; i <= b; i++) {
+    numbers.push(i);
+  }
+  for (let i = 0; i < numbers.length; i++) {
+    // console.log(numbers[i]);
+    const result = isPrime3(numbers[i]);
+    if (result) {
+      primeNumbers.push(numbers[i]);
+    }
+  }
+  return primeNumbers;
+}
+
+function isPrime3(n) {
+  if (n < 2) return false;
+  if (n === 2) return true;
+  if (n % 2 === 0) return false;
+
+  for (i = 3; i <= Math.sqrt(n); i += 2) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+
+console.log(findPrimeNumbers(39, 50));
+// console.log(filterPrimeNumbers(21));

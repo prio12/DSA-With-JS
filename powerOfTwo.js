@@ -11,6 +11,9 @@ function isPowerOfTwo(n) {
   return true;
 }
 
+// * Time Complexity: O(log n)
+// * Space Complexity: O(1)
+
 console.log(isPowerOfTwo(1));
 
 //*notes

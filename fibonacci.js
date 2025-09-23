@@ -63,3 +63,19 @@ function nthFibonacci(n) {
 
 // * Time Complexity: O(n)
 // * Space Complexity: O(n)
+
+//! Given a number n, return the Nth Fibonacci number (0-indexed).
+//*solve it in recursive way
+
+function recursiveFib(n) {
+  if (n < 2) {
+    return n;
+  }
+  return recursiveFib(n - 1) + recursiveFib(n - 2);
+}
+
+// Time Complexity: O(2^n)
+
+// Space Complexity: O(n)
+
+console.log(recursiveFib(2));

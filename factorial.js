@@ -106,3 +106,15 @@ function count(n) {
 // * Space Complexity: O(1)
 
 // console.log(count(10));
+
+//!  Given a number n, find the factorial of it.
+//*solve it in recursive way
+
+function recursiveFactorial(n) {
+  if (n === 0) return 1;
+  if (n === 1) return 1;
+
+  return n * recursiveFactorial(n - 1);
+}
+
+console.log(recursiveFactorial(5));

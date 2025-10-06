@@ -27,3 +27,22 @@ function findElementIndex(arr, target) {
 
 // * Time Complexity: O(n)
 // * Space Complexity: O(1)
+
+//! Problem Given an array of integers, find the **index of the first negative number**.
+//* Return -1 if there’s no negative number.
+
+const ar = [10, 23, 39, -3, 0];
+
+function findNegative(ar) {
+  for (let i = 0; i < ar.length; i++) {
+    if (ar[i] < 0) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+console.log(findNegative(ar));
+
+// * Time Complexity: O(n)
+// * Space Complexity: O(1)

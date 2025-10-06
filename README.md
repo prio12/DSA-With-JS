@@ -14,7 +14,7 @@ The goal is to improve my problem-solving skills and prepare for technical inter
 
 ## 👉 📖 Detailed Theory Notes
 
-(You can add a link to your Google Doc here)
+(https://docs.google.com/document/d/1ZUdjetugurycoVibsje0fXoOOgKOCGSvKz0TSBaALo0/edit?usp=sharing)
 
 ---
 

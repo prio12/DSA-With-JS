@@ -55,7 +55,7 @@ function firstOccurrence(arr, target) {
 
 // console.log(firstOccurrence([1, 2, 3, 4, 5], 6)); // -1
 // console.log(firstOccurrence([], 5)); // -1
-console.log(firstOccurrence([5, 5, 5, 5], 5)); // 0
+// console.log(firstOccurrence([5, 5, 5, 5], 5)); // 0
 
 //initially left = 0, right = 8, mid = 4(2),
 
@@ -65,3 +65,42 @@ console.log(firstOccurrence([5, 5, 5, 5], 5)); // 0
 //3rd loop => I have (left = 0, right = 0, result = 1 , mid = 0+0/2 = 0[0]) => 1st block e dhukbe na => 2nd block e dhukbe  =>  left = 0 + 1 = 1
 
 //4th loop = > I have (left = 1, right = 0, result = -1, ) => since right = 1 is less than left = 2 (so the loop will break)
+
+//!Problem: Find Last Occurrence (Binary Search Variation)
+
+//* Description:
+//*Given a sorted array of integers (which may contain duplicates) and a target element,
+//* return the index of the last occurrence of that target in the array.
+//* If the target does not exist, return -1.
+
+function lastOccurrence(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+  let result = -1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+
+    if (target === arr[mid]) {
+      result = mid;
+      left = mid + 1;
+    } else if (target < arr[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return result;
+}
+
+console.log(
+  lastOccurrence([2, 4, 4, 4, 6, 6, 6, 7, 7, 8, 8, 8, 8, 9, 9, 11], 9)
+);
+
+// initially left = 15 , right = 14,  result = -1
+//mid = 15[11]
+// (1st loop) first condition false =>  second condition false => third condition true => left = mid[7] + 1
+// (2nd loop) first condition false => second condition false =>third condition true => left = mid[11] + 1
+//(3rd loop) first condition true => left =  mid[13] + 1
+//(4th loop) first condition true = > left = mid[14 + 1]
+//(5th loop) first condition false => 2nd condition true => right = > mid [15] - 1

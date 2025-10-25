@@ -93,8 +93,16 @@ function lastOccurrence(arr, target) {
   return result;
 }
 
+function countOccurrence(arr, target) {
+  const firstOccurrenceIndex = firstOccurrence(arr, target);
+  const lastOccurrenceIndex = lastOccurrence(arr, target);
+  if (firstOccurrenceIndex === -1 || lastOccurrenceIndex === -1) {
+    return 0;
+  } else return lastOccurrenceIndex - firstOccurrenceIndex + 1;
+}
+
 console.log(
-  lastOccurrence([2, 4, 4, 4, 6, 6, 6, 7, 7, 8, 8, 8, 8, 9, 9, 11], 9)
+  countOccurrence([2, 4, 4, 4, 6, 6, 6, 7, 7, 8, 8, 8, 8, 9, 9, 11], 2)
 );
 
 // initially left = 15 , right = 14,  result = -1

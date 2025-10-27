@@ -51,6 +51,8 @@ function trailingZeros(n) {
   return count;
 }
 
+// n = 25 , 1st loop e =>
+
 // * Time Complexity: O(n)
 // * Space Complexity: O(1)
 

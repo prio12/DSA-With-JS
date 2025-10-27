@@ -101,9 +101,9 @@ function countOccurrence(arr, target) {
   } else return lastOccurrenceIndex - firstOccurrenceIndex + 1;
 }
 
-console.log(
-  countOccurrence([2, 4, 4, 4, 6, 6, 6, 7, 7, 8, 8, 8, 8, 9, 9, 11], 2)
-);
+// console.log(
+//   countOccurrence([2, 4, 4, 4, 6, 6, 6, 7, 7, 8, 8, 8, 8, 9, 9, 11], 2)
+// );
 
 // initially left = 15 , right = 14,  result = -1
 //mid = 15[11]
@@ -112,3 +112,21 @@ console.log(
 //(3rd loop) first condition true => left =  mid[13] + 1
 //(4th loop) first condition true = > left = mid[14 + 1]
 //(5th loop) first condition false => 2nd condition true => right = > mid [15] - 1
+
+//! Problem: Given an sorted array of elements and a target element, find the index of the target element in the array.
+//! If the target element is not present, return -1. (recursive way)
+
+function recursiveBinarySearch(arr, target, left = 0, right = arr.length - 1) {
+  if (left > right) return -1;
+  const mid = Math.floor((left + right) / 2);
+
+  if (target === arr[mid]) {
+    return mid;
+  } else if (target > arr[mid]) {
+    return recursiveBinarySearch(arr, target, (left = mid + 1), right);
+  } else {
+    return recursiveBinarySearch(arr, target, left, (right = mid - 1));
+  }
+}
+
+console.log(recursiveBinarySearch([2, 3, 3, 4, 5, 6], 4));

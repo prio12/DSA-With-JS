@@ -78,6 +78,8 @@ function recursiveFib(n) {
 
 // Space Complexity: O(n)
 
-console.log(recursiveFib(8));
+console.log(recursiveFib(5));
+
+//1st if block e atkabe na cause 2 is not less than 2. that's why, it will be called the recursiveFib with (n -1) = 1 and since it's will be entered in the
 
 // [0,1,1,2,3,5,8,13,21]

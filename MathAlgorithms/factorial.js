@@ -85,6 +85,22 @@ function sum(n) {
 
 // console.log(sum(10));
 
+//alternative of sum
+function sum(n) {
+  let total = 0;
+  let factorial = 1n;
+
+  for (let i = 1n; i <= BigInt(n); i++) {
+    factorial *= i;
+  }
+
+  for (let digit of factorial.toString()) {
+    total += Number(digit);
+  }
+
+  return total;
+}
+
 //! 04 Problem: Factorial Digit Count
 //*Description: Given a number n, calculate n! and return the number of digits in the factorial.
 

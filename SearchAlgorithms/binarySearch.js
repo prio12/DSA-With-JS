@@ -129,4 +129,4 @@ function recursiveBinarySearch(arr, target, left = 0, right = arr.length - 1) {
   }
 }
 
-console.log(recursiveBinarySearch([2, 3, 3, 4, 5, 6], 4));
+// console.log(recursiveBinarySearch([2, 3, 3, 4, 5, 6], 4));

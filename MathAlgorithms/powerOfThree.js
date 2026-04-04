@@ -1,7 +1,7 @@
 function isPowerOfThree(n) {
   if (n <= 0) return false;
 
-  while (n > 2) {
+  while (n > 1) {
     if (n % 3 !== 0) {
       return false;
     } else {
@@ -11,4 +11,4 @@ function isPowerOfThree(n) {
   return true;
 }
 
-console.log(isPowerOfThree(1));
+console.log(isPowerOfThree(6));

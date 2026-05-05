@@ -12,4 +12,4 @@ function removeDuplicates(nums) {
 console.log(removeDuplicates([1, 1, 2]));
 
 //Time Complexity - O(n)
-//Space complexity - O(1)
+//Space complexity - O(1) // in place

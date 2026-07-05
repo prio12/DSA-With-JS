@@ -25,4 +25,4 @@ function findMaxLength(nums) {
   }
   return max;
 }
-console.log(findMaxLength([0, 1, 1]));
+console.log(findMaxLength([0, 1, 1, 1, 1, 1, 0, 0, 0]));

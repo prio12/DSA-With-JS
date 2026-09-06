@@ -1,26 +1,25 @@
-function findMaxLength(nums) {
-  let transformedArr = [];
+function isAnagram(s, t) {
+  if (s.length !== t.length) return false;
 
-  for (let num of nums) {
-    if (num === 0) {
-      transformedArr.push(-1);
+  let map = new Map();
+
+  for (let i = 0; i < s.length; i++) {
+    if (!map.has(s[i])) {
+      map.set(s[i], 1);
     } else {
-      transformedArr.push(1);
+      map.set(s[i], map.get(s[i]) + 1);
     }
   }
 
-  let map = new Map();
-  map.set(0, -1);
-  let max = 0;
-  let prefixSum = 0;
-
-  for (let i = 0; i < transformedArr.length; i++) {
-    prefixSum += transformedArr[i];
-
-    if (map.has(prefixSum)) {
-      max = Math.max(max, i - map.get(prefixSum));
-    } else [map.set(prefixSum, i)];
+  for (let i = 0; i < t.length; i++) {
+    if (map.has(t[i]) && map.get(t[i]) > 0) {
+      map.set(t[i], map.get(t[i]) - 1);
+    } else {
+      return false;
+    }
   }
-  return max;
+
+  return true;
 }
-console.log(findMaxLength([0, 1]));
+
+console.log(isAnagram("rat", "car"));

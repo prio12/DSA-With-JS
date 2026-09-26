@@ -1,25 +1,20 @@
-function isAnagram(s, t) {
-  if (s.length !== t.length) return false;
+function lengthOfLongestSubstring(s) {
+  let maxLength = 0;
+  let left = 0;
+  let seen = new Set();
 
-  let map = new Map();
-
-  for (let i = 0; i < s.length; i++) {
-    if (!map.has(s[i])) {
-      map.set(s[i], 1);
-    } else {
-      map.set(s[i], map.get(s[i]) + 1);
+  for (let right = 0; right < s.length; right++) {
+    while (seen.has(s[right])) {
+      seen.delete(s[left]);
+      left++;
     }
+    seen.add(s[right]);
+    console.log(seen);
+    maxLength = Math.max(seen.size, maxLength);
+    console.log(maxLength);
   }
 
-  for (let i = 0; i < t.length; i++) {
-    if (map.has(t[i]) && map.get(t[i]) > 0) {
-      map.set(t[i], map.get(t[i]) - 1);
-    } else {
-      return false;
-    }
-  }
-
-  return true;
+  return maxLength;
 }
 
-console.log(isAnagram("rat", "car"));
+console.log(lengthOfLongestSubstring("abcabcbb"));
